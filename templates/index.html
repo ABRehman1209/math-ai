@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math AI - SolvIt</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>SolvIt <span class="ai-badge">AI</span></h1>
+            <p>Your intelligent mathematical companion</p>
+        </header>
+
+        <main>
+            <div class="input-section">
+                <input type="text" id="math-input" placeholder="Enter expression (e.g. x^2 + 2x + 1 or sin(x))" autocomplete="off">
+                <button id="solve-btn">Solve</button>
+            </div>
+
+            <div id="loading" class="hidden">
+                <div class="spinner"></div>
+                <p>Calculating solutions...</p>
+            </div>
+
+            <div id="result-container" class="hidden">
+                <div class="result-card">
+                    <h3>Result</h3>
+                    <div id="main-result" class="math-display"></div>
+                </div>
+
+                <div class="details-grid">
+                    <div class="detail-card">
+                        <h4>Solutions</h4>
+                        <div id="solutions-result" class="math-display"></div>
+                    </div>
+                    <div class="detail-card">
+                        <h4>Derivative</h4>
+                        <div id="derivative-result" class="math-display"></div>
+                    </div>
+                    <div class="detail-card">
+                        <h4>Integral</h4>
+                        <div id="integral-result" class="math-display"></div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p>Created by Mr Rehman</p>
+            <p>Contact: <a href="mailto:abdulrehmansoomro648@gmail.com" style="color: var(--text-muted); text-decoration: none;">abdulrehmansoomro648@gmail.com</a></p>
+            <p style="margin-top: 0.5rem; opacity: 0.5;">Powered by SymPy & MathJax</p>
+        </footer>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
